@@ -5,7 +5,6 @@ import cabinetLogo from "../../assets/img/logos/cabinetNP.svg";
 import acbLogo from "../../assets/img/logos/ACB.svg";
 import esfLogo from "../../assets/img/logos/ESF.svg";
 import patentLogo from "../../assets/img/logos/E-patent.svg";
-import postLogo from "../../assets/img/logos/post.svg";
 import kkmLogo from "../../assets/img/logos/KKM.svg";
 import mtLogo from "../../assets/img/logos/MT.svg";
 import { Layout } from "../../app/Layout";
@@ -32,71 +31,39 @@ function MainMenu() {
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
               title="Кабинет НП"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
+              value={`АИС "Личный кабинет налогоплательщика"`}
               img={cabinetLogo}
-              url="https://salyk.kg/"
+              url="/Edeclaration"
             />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Menu title="ККМ" value="KKM онлайн" img={kkmLogo} url="/KKM" />
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Menu title="ЭСФ" value="АИС ЭСФ" img={esfLogo} url="/ESF" />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
               title="ACB"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
+              value={`АИС "Администратор социальных взносов"`}
               img={acbLogo}
-              url="https://salyk.kg/"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Menu
-              title="ЭСФ"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
-              img={esfLogo}
-              url="/ESF"
+              url="/ASV"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
               title="Е-патент"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
+              value={`АИС 
+              "Электронный патент"`}
               img={patentLogo}
-              url="https://salyk.kg/"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Menu
-              title="Свободный пост"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
-              img={postLogo}
-              url="https://salyk.kg/"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Menu
-              title="ККМ"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
-              img={kkmLogo}
-              url="/KKM"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Menu
-              title="ЭТТН"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
-              img={cabinetLogo}
-              url="https://salyk.kg/"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Menu
-              title="Дислокация"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
-              img={cabinetLogo}
-              url="https://salyk.kg/"
+              url="/Patent"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
               title="ГАИС МТ"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
+              value={`Государственная автомитизированная информационная система "Маркированные товары"`}
               img={mtLogo}
               url="https://salyk.kg/"
             />

@@ -1,4 +1,4 @@
-import { Card, CardContent, Paper, Typography } from "@mui/material";
+import { Card, CardActions, CardContent, Paper, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./menu.module.css";
@@ -12,9 +12,8 @@ type Props = {
 
 export const Menu = ({ title, url, value, img }: Props) => {
   return (
-    <Paper elevation={1} >
-    <Card  className={styles.boxStyle}>
-      <CardContent>
+    <Card  className={styles.boxStyle} elevation={1}  sx={{ width: 230, height: 250}}>
+      <div>
         <Typography>
           <img src={img} alt="logo" />
         </Typography>
@@ -25,11 +24,13 @@ export const Menu = ({ title, url, value, img }: Props) => {
           {value}
         </Typography>
         <div className={styles.line}></div>
+        <div>
         <Link to={url} className={styles.styleButton}>
           Подробнее
         </Link>
-      </CardContent>
+        </div>
+ 
+      </div>
     </Card>
-    </Paper>
   );
 };

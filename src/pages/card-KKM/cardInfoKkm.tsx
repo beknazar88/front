@@ -9,9 +9,10 @@ import {
 import axios from "axios";
 import { ChartInfoRegisterCard } from "../../components/chartInfoCard/chartInfoRegisterCard";
 import BasicTable from "../../components/infoTable/infoKkmTable";
-import { ChartCardKkm } from "../../components/chartCard/cardChartKkm";
 import { Layout } from "../../app/Layout";
 import { AppBreadcrumbs } from "../../app/breadcrumbs";
+import { ChartCard } from "../../components/chartCard/chartCard";
+import LineChartKkm from "../../components/line-chart/LineChartKkm";
 
 function CardInfoKkm() {
   const [data, setData] = useState<GetTotalCheckSumKKM>();
@@ -67,7 +68,7 @@ function CardInfoKkm() {
           </Grid>
 
           <Grid item xs={12}>
-            <ChartCardKkm title="Кол-во зарегистрированных ККМ за 2021год" />
+            <ChartCard title="Кол-во зарегистрированных ККМ за 2021год" children={<LineChartKkm/>} />
           </Grid>
           <Grid item xs={12}>
             <BasicTable />

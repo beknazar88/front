@@ -11,6 +11,7 @@ import {
 import InfoTableEsf from "../../components/infoTable/infoTable";
 import { Layout } from "../../app/Layout";
 import { AppBreadcrumbs } from "../../app/breadcrumbs";
+import LineChart from "../../components/line-chart/LineChart";
 
 function CardInfoEsf() {
   const [data, setData] = useState<GetInvoiceCountWithSumEsf>();
@@ -101,7 +102,7 @@ function CardInfoEsf() {
             />
           </Grid>
           <Grid item xs={12}>
-            <ChartCard title="Кол-во зарегистрированных НП в ЭСФ по месяцам за 2021год" />
+            <ChartCard title="Кол-во зарегистрированных НП в ЭСФ по месяцам за 2021год" children={<LineChart/>} />
           </Grid>
           <Grid item xs={12}>
             <InfoTableEsf title="ЭСФ по сумме за последний месяц" row={row} />

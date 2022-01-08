@@ -69,3 +69,47 @@ export interface GetInvoiceCountWithSumEsf {
   } 
   
   export interface LastChecksInfoFace extends Array<LastChecksInfo>{}
+
+
+  ///edeclaration 
+
+  export interface EdeclarationDto {
+    name: string;
+    count: string;
+  }
+  
+  
+  export interface GetDeclarationTinCount {
+  
+    sumTinCount: number,
+    receiveYear: number,
+    codeDeclarationStatusID: number,
+    declStatusText: string
+  }
+  
+  export interface GetDeclarationInfo {
+    data?: GetDeclarationTinCount
+  } 
+  
+  export interface GetDeclarationTinCountInterface extends Array<GetDeclarationTinCount>{}
+
+
+  ///SocFond
+
+
+  export interface SocFondDto {
+    paysheetCount: number,
+    paysheetSum: number,
+    policyCount: number,
+    policySum: number,
+    farmCount: number,
+    farmSum: number,
+  }
+
+  /////Patent
+
+  export interface PatentDto {
+    patentCount: number,
+    policyCount: number,
+    paymentSum: number,
+  }
