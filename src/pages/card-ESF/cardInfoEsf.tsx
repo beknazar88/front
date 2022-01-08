@@ -10,6 +10,7 @@ import {
 } from "../../interfaces/dataCardInterface";
 import InfoTableEsf from "../../components/infoTable/infoTable";
 import { Layout } from "../../app/Layout";
+import { AppBreadcrumbs } from "../../app/breadcrumbs";
 
 function CardInfoEsf() {
   const [data, setData] = useState<GetInvoiceCountWithSumEsf>();
@@ -83,17 +84,15 @@ function CardInfoEsf() {
   return (
     <Layout className={styles.menuStyle}>
       <Container maxWidth="lg">
+        <Grid item xl={12}>
+          <AppBreadcrumbs title="ЭСФ"/>
+        </Grid>
         <Grid
           container
           direction="row"
           rowSpacing={3}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
-          <Grid item xl={12}>
-          <div className={styles.txtStyle}>
-              <p>ESF</p>
-            </div>
-          </Grid>
 
           <Grid item xs={12} lg={12}>
             <ChartInfoCard

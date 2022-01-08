@@ -1,0 +1,16 @@
+.linlStyle {
+    text-decoration: none;
+    text-transform: none;
+}
+.linlStyle  a :link{
+    text-decoration: none;
+    text-transform: none;
+}
+.vl {
+    border-left: 1px solid black;
+    height: 20px;
+    margin: 0px 10px 0px 10px;
+}
+.boxStyle {
+    margin: 0px 0px 50px 0px;
+}
