@@ -48,7 +48,7 @@ function CardInfoEsf() {
   const row = invoice?.map((row) => (
     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
       <TableCell component="th" scope="row">
-        {row.totalAmount}
+        {row.invoiceNum}
       </TableCell>
       <TableCell align="right">
         <Chip
@@ -65,7 +65,7 @@ function CardInfoEsf() {
   const rowTen = ten?.map((row) => (
     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
       <TableCell component="th" scope="row">
-        {row.totalAmount}
+        {row.invoiceNum}
       </TableCell>
       <TableCell align="right">
         <Chip
@@ -85,7 +85,7 @@ function CardInfoEsf() {
     <Layout className={styles.menuStyle}>
       <Container maxWidth="lg">
         <Grid item xl={12}>
-          <AppBreadcrumbs title="ЭСФ"/>
+          <AppBreadcrumbs title="ЭСФ" />
         </Grid>
         <Grid
           container
@@ -93,7 +93,6 @@ function CardInfoEsf() {
           rowSpacing={3}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
-
           <Grid item xs={12} lg={12}>
             <ChartInfoCard
               count={`${count} шт`}
