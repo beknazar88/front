@@ -113,3 +113,12 @@ export interface GetInvoiceCountWithSumEsf {
     policyCount: number,
     paymentSum: number,
   }
+
+  ////itas
+  export interface DataCardInterface {
+    budgetType: string;
+    factVal: number;
+    forecastVal: number;
+    fulfillmentPercentage: number;
+  }
+  

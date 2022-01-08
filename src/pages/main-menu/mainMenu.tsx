@@ -23,9 +23,9 @@ function MainMenu() {
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
               title="Иснак"
-              value="Lorem ipsum dolor sit amet consectetur adipisicing elit HELLO"
+              value="Информационная система налогового администрирования Кыргызстана"
               img={isnakLogo}
-              url="https://salyk.kg/"
+              url="/Itas"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
