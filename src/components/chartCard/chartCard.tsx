@@ -1,6 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import React from "react";
-import  LineChart  from "../line-chart/LineChart";
 import styles from './chartCard.module.css'
 type Props = {
     title: string;
