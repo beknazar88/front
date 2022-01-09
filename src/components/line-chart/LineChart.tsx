@@ -25,13 +25,14 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  interaction: {
+    mode: "index" as const,
+    intersect: false,
+  },
   plugins: {
-    legend: {
-      position: "top" as const,
-    },
     title: {
       display: true,
-      text: "ESF",
+      text: "ЭСФ",
     },
   },
 };
@@ -60,8 +61,9 @@ const LineChart = () => {
       {
         label: "Количество новых зарегистрированных НП",
         data: lineChart?.map((obj) => obj.count),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        fill: true,
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],
   };

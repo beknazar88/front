@@ -33,7 +33,6 @@ export interface GetInvoiceCountWithSumEsf {
   ////конец KKM
   
   export interface TopTenForLastMonthEsf {
-  
     invoiceNum: number;
     totalAmount: number;
     invoiceDate: string;

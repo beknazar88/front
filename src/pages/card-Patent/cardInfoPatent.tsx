@@ -35,7 +35,7 @@ function PatentInfoCard() {
         <Grid item xl={12}>
           <AppBreadcrumbs title="Патент" />
         </Grid>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid container rowSpacing={8} sx={{pb:6}}>
           <Grid item xs={12} sm={6} md={6} lg={12}>
             <PatentCard
               title="Электронные патенты/полисы за 2021 год"

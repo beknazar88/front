@@ -25,13 +25,14 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  interaction: {
+    mode: "index" as const,
+    intersect: false,
+  },
   plugins: {
-    legend: {
-      position: "top" as const,
-    },
     title: {
       display: true,
-      text: "KKM",
+      text: "ККМ",
     },
   },
 };
@@ -58,7 +59,7 @@ const LineChartKkm = () => {
     labels: labels,
     datasets: [
       {
-        label: "Количество новых зарегистрированных НП",
+        label: "ККМ",
         data: lineChart?.map((obj) => obj.kkmCount),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",

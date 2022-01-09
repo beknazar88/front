@@ -1,15 +1,16 @@
 import React from "react";
-import styles from "./Navbar.module.css";
 import smartLogo from "../assets/img/logos/smart-logo.svg";
 import { Button, Container, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks/use-hooks";
 import { useAuth } from "../hooks/use-auth";
 import { removeUser } from "../store/slice/userSlice";
+import { makeStyles } from "@mui/styles";
 
 export const Navbar = () => {
   const dispatch = useAppDispatch();
   const { isAuth } = useAuth();
+  const styles = useStyles();
 
   return (
     <div className={styles.header}>
@@ -20,9 +21,7 @@ export const Navbar = () => {
               {" "}
               <img src="/img/logoGNS.svg" alt="logo" />
             </Link>
-            <Grid
-              sx={{ display: { xs: "none", sm: "none", md: "block" } }}
-            >
+            <Grid sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
               <Grid display="flex" alignItems="center">
                 <div className={styles.txtStyle}>
                   Государственная Налогавая Служба
@@ -54,3 +53,28 @@ export const Navbar = () => {
     </div>
   );
 };
+
+const useStyles = makeStyles({
+  header: {
+    color: "#3BA6B3",
+    boxShadow: "0px 2px 10px rgb(0 0 0 / 5%)",
+    marginBottom: "50px",
+    background: "white",
+  },
+  txtStyle: {
+    fontWeight: "bold",
+    fontSize: "18px",
+    lineHeight: "normal",
+    color: "black",
+    padding: "15px",
+    textAlign: "start",
+    "& span": {
+      color: "#3BA6B3",
+    },
+  },
+  vl: {
+    borderLeft: "2px solid #D7D8DA",
+    height: "35px",
+    margin: "0px 25px 0px 25px",
+  },
+});

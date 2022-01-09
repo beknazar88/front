@@ -47,7 +47,10 @@ function CardInfoEsf() {
   }, []);
 
   const row = invoice?.map((row) => (
-    <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+    <TableRow
+      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+      key={row.invoiceNum}
+    >
       <TableCell component="th" scope="row">
         {row.invoiceNum}
       </TableCell>
@@ -64,7 +67,10 @@ function CardInfoEsf() {
   ));
 
   const rowTen = ten?.map((row) => (
-    <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+    <TableRow
+      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+      key={row.invoiceNum}
+    >
       <TableCell component="th" scope="row">
         {row.invoiceNum}
       </TableCell>
@@ -91,7 +97,7 @@ function CardInfoEsf() {
         <Grid
           container
           direction="row"
-          rowSpacing={3}
+          rowSpacing={8}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
           <Grid item xs={12} lg={12}>
@@ -102,12 +108,15 @@ function CardInfoEsf() {
             />
           </Grid>
           <Grid item xs={12}>
-            <ChartCard title="Кол-во зарегистрированных НП в ЭСФ по месяцам за 2021год" children={<LineChart/>} />
+            <ChartCard
+              title="Кол-во зарегистрированных НП в ЭСФ по месяцам за 2021год"
+              children={<LineChart />}
+            />
           </Grid>
           <Grid item xs={12}>
             <InfoTableEsf title="ЭСФ по сумме за последний месяц" row={row} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{ pb: 8 }}>
             <InfoTableEsf title="Последних выписанных ЭСФ" row={rowTen} />
           </Grid>
         </Grid>

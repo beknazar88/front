@@ -19,6 +19,7 @@ function MainMenu() {
           direction="row"
           rowSpacing={3}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{pb:8}}
         >
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Menu
@@ -60,7 +61,7 @@ function MainMenu() {
               url="/Patent"
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={3} >
             <Menu
               title="ГАИС МТ"
               value={`Государственная автомитизированная информационная система "Маркированные товары"`}

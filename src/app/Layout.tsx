@@ -1,16 +1,26 @@
 import { Navbar } from "./Navbar";
-import styles from "./Layout.module.css";
+import { makeStyles } from "@mui/styles";
 
 type Props = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 };
 
 export const Layout = ({ className, children }: Props) => {
+  const styles = useStyles();
   return (
-    <main className={className}>
-      <Navbar />
-      <div className={styles.pageContent}>{children}</div>
-    </main>
+    <div className={styles.bodyStyle}>
+      <main className={className}>
+        <Navbar />
+        <div>{children}</div>
+      </main>
+    </div>
   );
 };
+
+const useStyles = makeStyles({
+  bodyStyle: {
+    background: "#F6F7FB",
+    height: "100vh",
+  },
+});

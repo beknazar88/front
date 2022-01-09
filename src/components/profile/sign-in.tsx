@@ -2,11 +2,12 @@ import React from "react";
 import { SignInForm } from "./sign-in-form";
 import styles from "./sign.module.css";
 import { Box, Container, Grid } from "@mui/material";
-import { Layout } from "../../app/Layout";
+import { Navbar } from "../../app/Navbar";
 
 export const SignIn = () => {
   return (
-    <Layout>
+    <>
+      <Navbar />
       <Box
         sx={{
           flexGrow: 6,
@@ -70,6 +71,6 @@ export const SignIn = () => {
 
         <img alt="floor" src="/img/footer.svg" className={styles.footerPhoto} />
       </Grid>
-    </Layout>
+    </>
   );
 };
