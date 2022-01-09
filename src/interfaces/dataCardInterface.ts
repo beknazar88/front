@@ -31,6 +31,24 @@ export interface GetInvoiceCountWithSumEsf {
   export interface GetKKMRegistrationByMonthFace extends Array<GetKKMRegistrationByMonth>{}
 
   ////конец KKM
+
+  ////itas chart
+
+  export interface RevenuesByRayonAggregate {
+    rayonCode: string,
+    rayonName: string,
+    totalAmount: number,
+    planTotalAmount: number,
+  }
+
+  export interface GetRevenuesByRayonAggregate  {
+    dataAll?: RevenuesByRayonAggregate 
+  } 
+  
+  export interface GetRevenuesByRayonAggregateFace extends Array<RevenuesByRayonAggregate >{}
+
+
+  /////
   
   export interface TopTenForLastMonthEsf {
     invoiceNum: number;
@@ -121,3 +139,15 @@ export interface GetInvoiceCountWithSumEsf {
     fulfillmentPercentage: number;
   }
   
+  export interface ItasDto {
+    regionName: string,
+    ugnsName: string,
+    forecastVal: number,
+    factVal: number,
+  }
+
+  export interface GetItasDto {
+    data?: ItasDto
+  } 
+  
+  export interface GetItasDtoInterface extends Array<ItasDto>{}
