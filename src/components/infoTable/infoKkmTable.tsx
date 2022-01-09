@@ -30,12 +30,13 @@ export default function BasicTable() {
       component={Paper}
       elevation={3}
       className={styles.boxMargin}
+      sx={{p:6, maxWidth: 1054}}
     >
-      <Typography variant="h4" component="div">
+      <Typography variant="h4" component="div" sx={{pb:4}}>
         Список из последних 20 чеков
       </Typography>
       <hr />
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Чека</TableCell>
@@ -51,6 +52,7 @@ export default function BasicTable() {
           {check?.map((row) => (
             <TableRow
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              key={row.checkNumber}
             >
               <TableCell component="th" scope="row">
                 {row.checkNumber}

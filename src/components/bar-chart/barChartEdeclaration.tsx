@@ -29,6 +29,11 @@ export const options = {
     },
   },
   responsive: true,
+  
+  interaction: {
+    mode: "index" as const,
+    intersect: false,
+  },
   plugins: {
     legend: {
       position: "top" as const,

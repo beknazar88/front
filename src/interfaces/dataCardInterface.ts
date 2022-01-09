@@ -33,7 +33,6 @@ export interface GetInvoiceCountWithSumEsf {
   ////конец KKM
   
   export interface TopTenForLastMonthEsf {
-  
     invoiceNum: number;
     totalAmount: number;
     invoiceDate: string;
@@ -113,3 +112,12 @@ export interface GetInvoiceCountWithSumEsf {
     policyCount: number,
     paymentSum: number,
   }
+
+  ////itas
+  export interface DataCardInterface {
+    budgetType: string;
+    factVal: number;
+    forecastVal: number;
+    fulfillmentPercentage: number;
+  }
+  
