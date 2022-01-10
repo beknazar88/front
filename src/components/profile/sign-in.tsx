@@ -8,52 +8,60 @@ export const SignIn = () => {
   return (
     <>
       <Navbar />
-      <Box
-        sx={{
-          flexGrow: 6,
-          p: 4,
-          borderRadius: "65px",
-          border: "4px solid #36353D",
-        }}
+      <Grid
+        container
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
-        <Container maxWidth="lg">
-          <Grid
-            container
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <Grid item xs lg={4} md={4} sm={3} xl={2}>
-              <SignInForm />
-            </Grid>
+        <Box
+          sx={{
+            flexGrow: 6,
+            p: 4,
+            borderRadius: "65px",
+            border: "4px solid #36353D",
+            maxWidth: 1500,
+          }}
+        >
+          <Container maxWidth="lg">
             <Grid
-              item
-              xs
-              md={8}
-              lg={8}
-              xl={8}
-              sx={{ display: { xs: "none", sm: "none", md: "block" } }}
+              container
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
             >
-              <div className={styles.txtSpan}>
-                <div>
-                  <span>ККМ:</span>20438
-                </div>
+              <Grid item xs lg={4} md={4} sm={3} xl={2}>
+                <SignInForm />
+              </Grid>
+              <Grid
+                item
+                xs
+                md={8}
+                lg={8}
+                xl={8}
+                sx={{ display: { xs: "none", sm: "none", md: "block" } }}
+              >
+                <div className={styles.txtSpan}>
+                  <div>
+                    <span>ККМ:</span>20438
+                  </div>
 
-                <div>
-                  <span>Пробито чеков:</span>20438
+                  <div>
+                    <span>Пробито чеков:</span>20438
+                  </div>
+                  <div>
+                    <span>Выявлено нарушений:</span>20438
+                  </div>
+                  <div>
+                    <span>Проверка субьектов:</span>20438
+                  </div>
                 </div>
-                <div>
-                  <span>Выявлено нарушений:</span>20438
-                </div>
-                <div>
-                  <span>Проверка субьектов:</span>20438
-                </div>
-              </div>
-              <img alt="kg" src="/img/kg.svg" width={900} height={465} />
+                <img alt="kg" src="/img/kg.svg" width={900} height={465} />
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
+          </Container>
+        </Box>
+      </Grid>
 
       <Grid
         item
