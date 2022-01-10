@@ -1,17 +1,18 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { ItasCard } from "./itasCard";
 import { GetItasDtoInterface } from "../../interfaces/dataCardInterface";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import { makeStyles } from "@mui/styles";
+import { Grid } from "@mui/material";
 
 export const CaruselItas = () => {
+  const styles = useStyles();
   const [itas, setItas] = useState<GetItasDtoInterface>();
 
   useEffect(() => {
@@ -24,85 +25,38 @@ export const CaruselItas = () => {
     itasData();
   }, []);
 
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = itas?.length as number;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    speed: 500,
+    slidesToShow: 3,
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      ></Paper>
-
-      {itas?.map((step, index) => (
-        <div key={step.factVal}>
-          {Math.abs(activeStep - index) <= 2 ? (
-            <Box
-              sx={{
-                height: 255,
-                display: "block",
-                maxWidth: 400,
-                overflow: "hidden",
-                width: "100%",
-              }}
-            >
+    <Box sx={{ maxWidth: 1040, p: 6, flexGrow: 1 }}>
+      <Grid container direction="row" item xl={12}>
+        <Slider {...settings} className={styles.boxSlider}>
+          {itas?.map((step, index) => (
+            <div key={step.factVal}>
               <ItasCard
                 title={step.ugnsName}
                 factVal={step.factVal}
                 count={step.forecastVal}
               />
-            </Box>
-          ) : null}
-        </div>
-      ))}
-      <MobileStepper
-        variant="text"
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
+            </div>
+          ))}
+        </Slider>
+      </Grid>
     </Box>
   );
 };
+
+const useStyles = makeStyles({
+  boxSlider: {
+    width: "100%",
+  },
+});
 
 export default CaruselItas;

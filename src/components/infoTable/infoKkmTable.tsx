@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { LastChecksInfoFace } from "../../interfaces/dataCardInterface";
-import { Typography } from "@mui/material";
+import { Chip, Typography } from "@mui/material";
 import styles from "../chartInfoCard/chartInfo.module.css";
 
 export default function BasicTable() {
@@ -30,16 +30,16 @@ export default function BasicTable() {
       component={Paper}
       elevation={3}
       className={styles.boxMargin}
-      sx={{p:6, maxWidth: 1054}}
+      sx={{ p: 6, maxWidth: 1054 }}
     >
-      <Typography variant="h4" component="div" sx={{pb:4}}>
+      <Typography variant="h4" component="div" sx={{ pb: 4 }}>
         Список из последних 20 чеков
       </Typography>
       <hr />
-      <Table sx={{ }} aria-label="simple table">
+      <Table sx={{}} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Чека</TableCell>
+            <TableCell>#Чека</TableCell>
             <TableCell align="right">Дата создания</TableCell>
             <TableCell align="right">Сумма</TableCell>
             <TableCell align="right">Наименование ККМ</TableCell>
@@ -58,7 +58,15 @@ export default function BasicTable() {
                 {row.checkNumber}
               </TableCell>
               <TableCell align="right">{row.dateCreated}</TableCell>
-              <TableCell align="right">{row.totalSum}</TableCell>
+              <TableCell align="right">
+                {" "}
+                <Chip
+                  label={`${row.totalSum
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} сом`}
+                  color="success"
+                />
+              </TableCell>
               <TableCell align="right">{row.kkmName}</TableCell>
               <TableCell align="right">{row.kkmSerialNumber}</TableCell>
               <TableCell align="right">{row.salesPointName}</TableCell>

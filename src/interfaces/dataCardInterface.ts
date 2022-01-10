@@ -131,14 +131,7 @@ export interface GetInvoiceCountWithSumEsf {
     paymentSum: number,
   }
 
-  ////itas
-  export interface DataCardInterface {
-    budgetType: string;
-    factVal: number;
-    forecastVal: number;
-    fulfillmentPercentage: number;
-  }
-  
+
   export interface ItasDto {
     regionName: string,
     ugnsName: string,
@@ -151,3 +144,28 @@ export interface GetInvoiceCountWithSumEsf {
   } 
   
   export interface GetItasDtoInterface extends Array<ItasDto>{}
+
+
+  /////budgetType
+
+  export interface BudgetTypeDto {
+    budgetType?: string,
+    forecastVal: number,
+    factVal: number,
+    fulfillmentPercentage?: number
+  }
+
+
+    ///itasLineChart
+    export interface GetItasTinsByYear{
+      tinCount: number,
+      year: number,
+    } 
+  
+    export interface KKMRegistrationByMonth {
+      data?: GetItasTinsByYear
+    } 
+    
+    export interface GetItasTinsByYearInterface extends Array<GetItasTinsByYear>{}
+  
+    ////конец itasLineChart
