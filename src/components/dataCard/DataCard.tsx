@@ -2,12 +2,23 @@ import React from 'react';
 import styles from './DataCard.module.css';
 
 import budgetLogo from '../../assets/img/logos/budget-card-logo.svg'
-import { DataCardInterface } from '../../interfaces/dataCardInterface';
+import { Card, CardContent } from '@mui/material';
 
-const DataCard = (props: DataCardInterface) => (
-  <div className={styles.dataCard}>
+
+  type Props = {
+    budgetType?: string;
+    factVal?: string;
+    forecastVal?: string;
+    fulfillmentPercentage?: string;
+    img: string;
+  }
+  
+
+const DataCard = ({...props}: Props) => (
+  <Card  elevation={2} className={styles.cardStyle} sx={{ width: 270, height: 350}}>
+    <CardContent>
     <div className={styles.topSection}>
-      <img alt={'budget-logo'} src={budgetLogo}/>
+      <img alt={'budget-logo'} src={props.img}/>
       <div className={styles.cardTitle}>
         <p>{props.budgetType}</p>
       </div>
@@ -19,7 +30,7 @@ const DataCard = (props: DataCardInterface) => (
       </div>
       <div className={styles.percentageArea}>
         <div className={styles.percentage}>
-          {props.fulfillmentPercentage} <p>за последний месяц</p>
+          {props.fulfillmentPercentage}
         </div>
       </div>
     </div>
@@ -27,11 +38,11 @@ const DataCard = (props: DataCardInterface) => (
       <div className={styles.progressBar}>
       </div>
       <div className={styles.forecastVal}>
-        Прогноз: <p>{props.forecastVal}</p>
+         <p>{props.forecastVal}</p>
       </div>
     </div>
-
-  </div>
+    </CardContent>
+  </Card>
 );
 
 export default DataCard;

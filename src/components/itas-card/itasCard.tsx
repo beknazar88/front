@@ -11,7 +11,7 @@ type Props = {
 
 export const ItasCard = (props: Props) => {
   return (
-    <Card elevation={3} className={styles.cardStyle} sx={{ width: 230, height: 250}}>
+    <Card elevation={3} className={styles.cardStyle} sx={{ width: 230, height: 280}}>
       <CardContent>
         <Typography>
           <img alt={"budget-logo"} src={budgetLogo} />
